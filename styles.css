@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+@keyframes body-change-color {
+    0% {background-color: wheat;}
+    50% {background-color: darkred;}
+    100% {background-color: black;}
+}
+.outer-container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation-name: body-change-color;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
+}
+@keyframes image-change {
+    0% {background-image: url('deadpool-4.png');}
+    50% {background-image: url('deadpool-3.png');}
+    100% {background-image: url('deadpool-5.png');}
+}
+@keyframes size-change {
+    0% {width: 250px; height: 250px;}
+    100% {width: 350px; height: 350px;}
+}
+.main-container{
+    width: 250px;
+    height: 250px;
+    /*border: 1px solid black;*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url('deadpool-4.png');
+    /*background-color: black;*/
+
+    /*animation-name: image-change;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;*/
+    animation: image-change 6s 1s infinite alternate, body-change-color 6s ease-in-out 1s infinite alternate,
+    size-change 3s linear 1s infinite alternate;
+}
